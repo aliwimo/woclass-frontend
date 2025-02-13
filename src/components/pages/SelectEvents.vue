@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { eventService } from '@/api/services/event.service.ts'
+import { eventService } from '@/api/services/EventService.ts'
 import type { EventType } from '@/types/models/event'
 import { Card, Skeleton } from 'primevue';
 

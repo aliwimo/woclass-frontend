@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { defineProps, onMounted, ref, watch } from 'vue'
-import { Card, Button } from 'primevue'
 import type { SessionType } from '@/types/models/session'
 import { classroomService } from '@/api/services/classroom.service.ts'
-import SessionCard from '@/components/pages/SessionCard.vue'
+import SessionCard from '@/components/pages/classroom/SessionCard.vue'
 import { formatDate } from '@/utilities/formatDate.ts'
+import NoSessions from '@/components/pages/classroom/NoSessions.vue'
 
 const props = defineProps({
   classroomId: {
@@ -38,16 +38,20 @@ watch(() => props.date, fetchSessions);
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
-    <div>{{ props.date }}</div>
-    <SessionCard
-      v-for="(session, index) in sessions"
-      :key="index"
-      :status="session.status"
-      :end-time="session.end_time"
-      :start-time="session.start_time"
-      :date="date"
-      :classroom-id="classroomId"
-    />
+  <div v-if="sessions.length > 0">
+  <div class="grid grid-cols-3 gap-4">
+      <SessionCard
+        v-for="(session, index) in sessions"
+        :key="index"
+        :status="session.status"
+        :end-time="session.end_time"
+        :start-time="session.start_time"
+        :date="date"
+        :classroom-id="classroomId"
+      />
+    </div>
+  </div>
+  <div v-else>
+    <NoSessions />
   </div>
 </template>

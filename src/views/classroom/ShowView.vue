@@ -3,7 +3,7 @@ import { onMounted, ref, watch } from 'vue'
 import ViewTitle from '@/components/ui/ViewTitle.vue'
 import { useRoute } from 'vue-router'
 import DatePicker from 'primevue/datepicker'
-import ClassroomSessions from '@/components/pages/ClassroomSessions.vue'
+import ClassroomSessions from '@/components/pages/classroom/ClassroomSessions.vue'
 
 const route = useRoute()
 
@@ -14,7 +14,7 @@ const nextMonth = month === 11 ? 0 : month + 1
 const nextYear = nextMonth === 0 ? year + 1 : year
 
 // refs
-const date = ref(new Date())
+const date = ref()
 const minDate = ref(new Date())
 const maxDate = ref(new Date())
 const classroomId = ref<number>(0)
@@ -40,13 +40,13 @@ watch(() => route.params.classroom_id, updateClassroomId)
   <div>
     <ViewTitle title="Classroom" />
 
-    <div class="max-w-lg mx-auto w-full">
+    <div class="max-w-96 mx-auto w-full mb-10">
+      <div class="text-center text-sm text-gray-600 mb-4">Select a date to show sessions</div>
       <DatePicker
         v-model="date"
         :minDate="minDate"
         :maxDate="maxDate"
         :manualInput="true"
-        :default-value="date"
         dateFormat="yy-mm-dd"
         showIcon
         fluid

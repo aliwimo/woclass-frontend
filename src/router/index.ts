@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/home.view.vue'
+import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/events',
       name: 'events',
-      component: () => import('@/views/event/index.view.vue'),
+      component: () => import('@/views/event/IndexView.vue'),
     },
     {
       path: '/classrooms',
