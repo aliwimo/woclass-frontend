@@ -3,6 +3,8 @@ import { defineProps, onMounted, ref, watch } from 'vue'
 import { Card, Button } from 'primevue'
 import type { SessionType } from '@/types/models/session'
 import { classroomService } from '@/api/services/classroom.service.ts'
+import SessionCard from '@/components/pages/SessionCard.vue'
+import { formatDate } from '@/utilities/formatDate.ts'
 
 const props = defineProps({
   classroomId: {
@@ -21,7 +23,7 @@ const loading = ref<boolean>(false)
 const fetchSessions = async () => {
   try {
     loading.value = true
-    const formattedDate = props.date.toISOString().split('T')[0]
+    const formattedDate = formatDate(props.date);
     sessions.value = await classroomService.getSessions(props.classroomId, formattedDate);
   } catch (error) {
     console.error('Error fetching classrooms:', error)
@@ -31,23 +33,21 @@ const fetchSessions = async () => {
 }
 
 onMounted(fetchSessions)
-watch(() => props.date, fetchSessions, { immediate: true });
+watch(() => props.date, fetchSessions);
 
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
-    <Card
+    <div>{{ props.date }}</div>
+    <SessionCard
       v-for="(session, index) in sessions"
       :key="index"
-    >
-      <template #title>{{ session.start_time }} - {{ session.end_time }}</template>
-      <template #content>
-        <span class="m-0">{{ session.status }}</span>
-      </template>
-      <template #footer>
-        <Button label="reserve" />
-      </template>
-    </Card>
+      :status="session.status"
+      :end-time="session.end_time"
+      :start-time="session.start_time"
+      :date="date"
+      :classroom-id="classroomId"
+    />
   </div>
 </template>

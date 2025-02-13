@@ -1,7 +1,8 @@
-import axios from '@/api/axios.ts'
+// import axios from '@/api/axios.ts'
 import endpoints from '@/api/endpoints'
 import type { AxiosResponse } from 'axios'
 import type { EventType } from '@/types/models/event'
+import axios from 'axios'
 
 export const eventService = {
   async getAllEvents(): Promise<EventType[]> {
@@ -12,5 +13,11 @@ export const eventService = {
     return response.data;
   },
 
-  async reserve()
+  async reserve(data) {
+    return await axios.request({
+      method: endpoints.events.create.method,
+      url: endpoints.events.create.url(),
+      data: data,
+    });
+  }
 }
