@@ -3,6 +3,10 @@ const ClassroomsEndpoints = {
     method: 'GET',
     url: () => 'v1/classrooms',
   },
+  sessions: {
+    method: 'GET',
+    url: (classroomId: number) => `v1/classrooms/${classroomId}/sessions`,
+  },
 } as const;
 
 type ClassroomsEndpoints = typeof ClassroomsEndpoints;

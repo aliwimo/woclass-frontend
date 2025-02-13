@@ -3,6 +3,10 @@ const EventsEndpoints = {
     method: 'GET',
     url: () => 'v1/events',
   },
+  create: {
+    method: 'POST',
+    url: () => 'v1/events',
+  }
 } as const;
 
 type EventsEndpoints = typeof EventsEndpoints;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { eventService } from '@/api/services/eventService.ts'
+import { eventService } from '@/api/services/event.service.ts'
 import type { EventType } from '@/types/models/event'
 import { Card, Skeleton } from 'primevue';
 
@@ -10,7 +10,7 @@ const loading = ref<boolean>(false)
 onMounted(async () => {
   try {
     loading.value = true
-    events.value = await eventService.getEvents()
+    events.value = await eventService.getAllEvents()
   } catch (error) {
     console.error('Error fetching events:', error)
   } finally {
