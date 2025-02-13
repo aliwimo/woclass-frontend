@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import { defineProps, onMounted, ref, watch } from 'vue'
-import { Card, Button } from 'primevue'
-import type { SessionStatus, SessionType } from '@/types/models/session'
-import { classroomService } from '@/api/services/classroom.service.ts'
-import { eventService } from '@/api/services/EventService.ts'
-import { formatDate } from '@/utilities/formatDate.ts'
-import type { ClassroomType } from '@/types/models/classroom'
+import { defineProps } from 'vue'
+import { Card } from 'primevue'
+import type { SessionStatus } from '@/types/models/session'
 import TimeRangeDisplay from '@/components/pages/classroom/TimeRangeDisplay.vue'
 import CreateEventModal from '@/components/pages/classroom/CreateEventModal.vue'
 
 
-const props = defineProps<{
+defineProps<{
   classroomId: number
   date: Date,
   startTime: string,
@@ -18,21 +14,6 @@ const props = defineProps<{
   status: SessionStatus,
 }>()
 
-const reserve = async () => {
-  try {
-    await eventService.reserve({
-      user_id: 1,
-      classroom_id: props.classroomId,
-      date: formatDate(props.date),
-      start_time: props.startTime,
-      end_time: props.endTime,
-      title: "Lecture",
-      description: "Introduction to Laravel"
-    });
-  } catch (error) {
-    console.error('Error reserving event: ', error)
-  }
-}
 </script>
 
 <template>
