@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Dialog from 'primevue/dialog';
 import { ref, defineProps } from 'vue';
+import { useRouter } from 'vue-router';
 import { Button, InputText } from 'primevue';
 import type { SessionStatus } from '@/types/models/session';
 import { eventService } from '@/api/services/EventService.ts';
@@ -14,6 +15,7 @@ const props = defineProps<{
   status: SessionStatus;
 }>();
 
+const router = useRouter();
 const visible = ref(false);
 const title = ref('');
 const description = ref('');
@@ -31,8 +33,10 @@ const reserve = async () => {
     });
 
     visible.value = false;
-    title.value = ''; // Clear input after submission
-    description.value = ''; // Clear input after submission
+    title.value = '';
+    description.value = '';
+
+    void router.push('/events');
   } catch (error) {
     console.error('Error reserving event:', error);
   }
