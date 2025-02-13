@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import type { ClassroomType } from '@/types/models/classroom'
-import { classroomService } from '@/api/services/classroomService.ts'
-import { Card } from 'primevue'
+import { classroomService } from '@/api/services/classroom.service.ts'
 import ViewTitle from '@/components/ui/ViewTitle.vue'
+import ClassroomCard from '@/components/pages/classroom/ClassroomCard.vue'
 
 const classrooms = ref<ClassroomType[]>([])
 const loading = ref<boolean>(false)
@@ -25,17 +25,13 @@ onMounted(async () => {
   <div>
     <ViewTitle title="Classrooms" subtitle="Lists all classrooms" />
 
-    <div class="flex flex-col gap-4">
-      <Card
+    <div class="grid grid-cols-2 gap-4">
+      <ClassroomCard
         v-for="classroom in classrooms"
         :key="classroom.id"
-      >
-        <template #title>{{ classroom.name }}</template>
-        <template #content>
-          <p class="m-0">{{ classroom.description }}</p>
-          <span class="m-0">Capacity: {{ classroom.capacity }}</span>
-        </template>
-      </Card>
+        :classroom="classroom"
+        class="h-full"
+      />
     </div>
 
   </div>

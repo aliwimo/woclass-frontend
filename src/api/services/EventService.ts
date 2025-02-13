@@ -4,11 +4,19 @@ import type { AxiosResponse } from 'axios'
 import type { EventType } from '@/types/models/event'
 
 export const eventService = {
-  async getEvents (): Promise<EventType[]> {
+  async getAllEvents(): Promise<EventType[]> {
     const response = await axios.request<any, AxiosResponse<EventType[]>>({
       method: endpoints.events.list.method,
       url: endpoints.events.list.url()
     });
     return response.data;
+  },
+
+  async reserve(data) {
+    return await axios.request({
+      method: endpoints.events.create.method,
+      url: endpoints.events.create.url(),
+      data: data,
+    });
   }
 }

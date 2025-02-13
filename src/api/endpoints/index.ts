@@ -1,5 +1,5 @@
-import EventsEndpoints from '@/api/endpoints/events.ts'
-import ClassroomsEndpoints from '@/api/endpoints/classrooms.ts'
+import EventsEndpoints from '@/api/endpoints/event.endpoints.ts'
+import ClassroomsEndpoints from '@/api/endpoints/classroom.endpoints.ts'
 
 const EndpointManager = {
   events: EventsEndpoints,

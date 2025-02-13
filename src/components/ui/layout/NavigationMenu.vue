@@ -21,11 +21,6 @@ const links = ref<Link[]>([
     route: '/events',
     icon: 'pi pi-star'
   },
-  {
-    label: 'Classrooms',
-    route: '/classrooms',
-    icon: 'pi pi-bolt'
-  },
 ]);
 
 </script>
