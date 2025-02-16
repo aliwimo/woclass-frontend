@@ -38,7 +38,7 @@ watch(() => props.date, fetchSessions);
 
 <template>
   <div v-if="sessions.length > 0">
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <SessionCard
         v-for="(session, index) in sessions"
         :key="index"
