@@ -1,7 +1,7 @@
 // stores/modal.ts
 
 import { defineStore } from 'pinia';
-import { type ModalKey, ModalMap } from '@/config/ModalService.ts'
+import { type ModalKey, ModalMap } from '@/config/ModalService.ts';
 
 export const useModalStore = defineStore('modal', {
   state: () => ({

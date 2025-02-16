@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import { Button } from 'primevue'
-import { ref } from 'vue'
+import { Button } from 'primevue';
+import { ref } from 'vue';
 
 interface Link {
   label: string,

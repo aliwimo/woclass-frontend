@@ -2,8 +2,8 @@
 import { defineProps } from 'vue';
 import { Card } from 'primevue';
 import type { EventType } from '@/types/models/event';
-import EventTimeRange from '@/components/pages/event/EventDate.vue'
-import EventField from '@/components/ui/EventField.vue'
+import EventTimeRange from '@/components/pages/event/EventDate.vue';
+import EventField from '@/components/ui/EventField.vue';
 
 defineProps<{ event: EventType }>();
 

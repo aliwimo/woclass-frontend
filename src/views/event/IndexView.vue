@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ListEvents from '@/components/pages/event/ListEvents.vue'
-import ViewTitle from '@/components/ui/ViewTitle.vue'
+import ListEvents from '@/components/pages/event/ListEvents.vue';
+import ViewTitle from '@/components/ui/ViewTitle.vue';
 </script>
 
 <template>

@@ -1,4 +1,4 @@
-import type { ClassroomType } from '@/types/models/classroom'
+import type { ClassroomType } from '@/types/models/classroom';
 
 export type EventType = {
   id: number;

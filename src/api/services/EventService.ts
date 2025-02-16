@@ -1,8 +1,8 @@
-import axios from '@/api/axios.ts'
-import endpoints from '@/api/endpoints'
-import type { AxiosResponse } from 'axios'
-import type { EventType } from '@/types/models/event'
-import type { ReserveRequest } from '@/types/api/event'
+import axios from '@/api/axios.ts';
+import endpoints from '@/api/endpoints';
+import type { AxiosResponse } from 'axios';
+import type { EventType } from '@/types/models/event';
+import type { ReserveRequest } from '@/types/api/event';
 
 export const eventService = {
   async getAllEvents(): Promise<EventType[]> {
@@ -20,4 +20,4 @@ export const eventService = {
       data: data,
     });
   }
-}
+};

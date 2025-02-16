@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import NavigationLinks from '@/components/ui/navigation/NavigationLinks.vue'
-import NavigationAuth from '@/components/ui/navigation/NavigationAuth.vue'
+import NavigationLinks from '@/components/ui/navigation/NavigationLinks.vue';
+import NavigationAuth from '@/components/ui/navigation/NavigationAuth.vue';
 </script>
 
 <template>

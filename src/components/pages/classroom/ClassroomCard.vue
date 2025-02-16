@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Card, Button, Chip } from 'primevue'
-import { defineProps } from 'vue'
-import type { ClassroomType } from '@/types/models/classroom'
+import { Card, Button, Chip } from 'primevue';
+import { defineProps } from 'vue';
+import type { ClassroomType } from '@/types/models/classroom';
 
-defineProps<{ classroom: ClassroomType }>()
+defineProps<{ classroom: ClassroomType }>();
 </script>
 
 <template>

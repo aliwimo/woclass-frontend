@@ -1,10 +1,10 @@
 <script setup lang="ts">
 
-import { useModalStore } from '@/stores/modal.ts'
-import { useAuthStore } from '@/stores/authStore.ts'
-import type { ModalKey } from '@/config/ModalService.ts'
-import { Button } from 'primevue'
-import LogoutButton from '@/components/ui/auth/LogoutButton.vue'
+import { useModalStore } from '@/stores/modal.ts';
+import { useAuthStore } from '@/stores/authStore.ts';
+import type { ModalKey } from '@/config/ModalService.ts';
+import { Button } from 'primevue';
+import LogoutButton from '@/components/ui/auth/LogoutButton.vue';
 
 const modalStore = useModalStore();
 const authStore = useAuthStore();

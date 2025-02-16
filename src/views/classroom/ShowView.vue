@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
-import ViewTitle from '@/components/ui/ViewTitle.vue'
-import { useRoute } from 'vue-router'
-import DatePicker from 'primevue/datepicker'
-import ClassroomSessions from '@/components/pages/classroom/ClassroomSessions.vue'
+import { onMounted, ref, watch } from 'vue';
+import ViewTitle from '@/components/ui/ViewTitle.vue';
+import { useRoute } from 'vue-router';
+import DatePicker from 'primevue/datepicker';
+import ClassroomSessions from '@/components/pages/classroom/ClassroomSessions.vue';
 
-const route = useRoute()
+const route = useRoute();
 
-const today = new Date()
-const month = today.getMonth()
-const year = today.getFullYear()
-const nextMonth = month === 11 ? 0 : month + 1
-const nextYear = nextMonth === 0 ? year + 1 : year
+const today = new Date();
+const month = today.getMonth();
+const year = today.getFullYear();
+const nextMonth = month === 11 ? 0 : month + 1;
+const nextYear = nextMonth === 0 ? year + 1 : year;
 
-const date = ref()
-const minDate = ref(new Date())
-const maxDate = ref(new Date())
-const classroomId = ref<number>(0)
+const date = ref();
+const minDate = ref(new Date());
+const maxDate = ref(new Date());
+const classroomId = ref<number>(0);
 
-minDate.value.setMonth(month)
-minDate.value.setFullYear(year)
-maxDate.value.setMonth(nextMonth)
-maxDate.value.setFullYear(nextYear)
+minDate.value.setMonth(month);
+minDate.value.setFullYear(year);
+maxDate.value.setMonth(nextMonth);
+maxDate.value.setFullYear(nextYear);
 
 const updateClassroomId = () => {
-  classroomId.value = parseInt(route.params.classroom_id as string)
-}
+  classroomId.value = parseInt(route.params.classroom_id as string);
+};
 
-onMounted(updateClassroomId)
-watch(() => route.params.classroom_id, updateClassroomId)
+onMounted(updateClassroomId);
+watch(() => route.params.classroom_id, updateClassroomId);
 
 </script>
 

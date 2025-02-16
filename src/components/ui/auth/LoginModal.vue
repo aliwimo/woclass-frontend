@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Dialog, Button, InputText, Message, Password } from 'primevue'
-import { LoginResolver } from '@/api/reslovers/LoginResolver.ts'
-import { Form, FormField, type FormSubmitEvent } from '@primevue/forms'
-import { defineEmits } from 'vue'
-import { useToast } from 'primevue/usetoast'
-import { useAuthStore } from '@/stores/authStore.ts'
+import { Dialog, Button, InputText, Message, Password } from 'primevue';
+import { LoginResolver } from '@/api/reslovers/LoginResolver.ts';
+import { Form, FormField, type FormSubmitEvent } from '@primevue/forms';
+import { defineEmits } from 'vue';
+import { useToast } from 'primevue/usetoast';
+import { useAuthStore } from '@/stores/authStore.ts';
 
 const emit = defineEmits(['close']);
 const toast = useToast();

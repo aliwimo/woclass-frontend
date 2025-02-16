@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Button, Card } from 'primevue'
-import { useModalStore } from '@/stores/modal.ts'
-import type { ModalKey } from '@/config/ModalService.ts'
+import { Button, Card } from 'primevue';
+import { useModalStore } from '@/stores/modal.ts';
+import type { ModalKey } from '@/config/ModalService.ts';
 
 const modalStore = useModalStore();
 const openModal = (key: ModalKey) => modalStore.openModal(key);

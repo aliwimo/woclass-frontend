@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Dialog from 'primevue/dialog'
-import { ref, defineProps } from 'vue'
-import { useRouter } from 'vue-router'
-import { Button, InputText, Textarea } from 'primevue'
-import type { SessionStatus } from '@/types/models/session'
-import { eventService } from '@/api/services/EventService.ts'
-import { formatDate } from '@/utilities/formatDate.ts'
-import { useToast } from 'primevue/usetoast'
+import Dialog from 'primevue/dialog';
+import { ref, defineProps } from 'vue';
+import { useRouter } from 'vue-router';
+import { Button, InputText, Textarea } from 'primevue';
+import type { SessionStatus } from '@/types/models/session';
+import { eventService } from '@/api/services/EventService.ts';
+import { formatDate } from '@/utilities/formatDate.ts';
+import { useToast } from 'primevue/usetoast';
 
 const props = defineProps<{
   classroomId: number
@@ -14,19 +14,19 @@ const props = defineProps<{
   startTime: string
   endTime: string
   status: SessionStatus
-}>()
+}>();
 
-const router = useRouter()
+const router = useRouter();
 const toast = useToast();
-const visible = ref(false)
-const title = ref('')
-const description = ref('')
+const visible = ref(false);
+const title = ref('');
+const description = ref('');
 
 const clearData = () => {
   visible.value = false;
   title.value = '';
   description.value = '';
-}
+};
 
 const reserve = async () => {
   try {
@@ -37,15 +37,15 @@ const reserve = async () => {
       end_time: props.endTime,
       title: title.value,
       description: description.value,
-    })
+    });
     clearData();
     toast.add({ severity: 'secondary', summary: 'Success!', life: 3000 });
-    void router.push({ name: 'events' })
+    void router.push({ name: 'events' });
   } catch (error) {
     toast.add({ severity: 'error', summary: 'Failed!', detail: 'Please Check Event\'s Title', life: 3000 });
-    console.error('Error reserving event:', error)
+    console.error('Error reserving event:', error);
   }
-}
+};
 </script>
 
 <template>

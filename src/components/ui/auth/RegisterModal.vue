@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Dialog, Button, InputText, Message, Password } from 'primevue'
-import { Form, FormField, type FormSubmitEvent } from '@primevue/forms'
-import { RegisterResolver } from '@/api/reslovers/RegisterResolver.ts'
-import { useToast } from 'primevue/usetoast'
-import { useAuthStore } from '@/stores/authStore.ts'
+import { Dialog, Button, InputText, Message, Password } from 'primevue';
+import { Form, FormField, type FormSubmitEvent } from '@primevue/forms';
+import { RegisterResolver } from '@/api/reslovers/RegisterResolver.ts';
+import { useToast } from 'primevue/usetoast';
+import { useAuthStore } from '@/stores/authStore.ts';
 
 const emit = defineEmits(['close']);
 const toast = useToast();

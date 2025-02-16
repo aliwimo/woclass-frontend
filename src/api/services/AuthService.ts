@@ -1,7 +1,7 @@
-import axios from '@/api/axios.ts'
-import endpoints from '@/api/endpoints'
-import type { authResponse, LoginRequest, RegisterRequest } from '@/types/api/auth'
-import type { AxiosResponse } from 'axios'
+import axios from '@/api/axios.ts';
+import endpoints from '@/api/endpoints';
+import type { authResponse, LoginRequest, RegisterRequest } from '@/types/api/auth';
+import type { AxiosResponse } from 'axios';
 
 export const authService = {
   async register(data: RegisterRequest): Promise<authResponse> {
@@ -21,4 +21,4 @@ export const authService = {
     });
     return response.data;
   },
-}
+};

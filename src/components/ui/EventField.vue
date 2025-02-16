@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import PrimeVueIcon from '@/components/ui/PrimeVueIcon.vue'
+import { defineProps } from 'vue';
+import PrimeVueIcon from '@/components/ui/PrimeVueIcon.vue';
 
 defineProps<{
   value: string;
   iconName: string;
-}>()
+}>();
 </script>
 
 <template>

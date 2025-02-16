@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Navigation from '@/components/ui/navigation/NavigationMenu.vue'
-import ModalWrapper from '@/components/ui/ModalWrapper.vue'
-import { Toast } from 'primevue'
+import Navigation from '@/components/ui/navigation/NavigationMenu.vue';
+import ModalWrapper from '@/components/ui/ModalWrapper.vue';
+import { Toast } from 'primevue';
 </script>
 
 <template>
