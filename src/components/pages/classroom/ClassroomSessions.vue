@@ -52,6 +52,6 @@ watch(() => props.date, fetchSessions);
     </div>
   </div>
   <div v-else>
-    <NoSessions />
+    <NoSessions v-show="date" />
   </div>
 </template>

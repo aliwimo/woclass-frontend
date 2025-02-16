@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import { eventService } from '@/api/services/EventService.ts'
 import type { EventType } from '@/types/models/event'
 import { Card, Skeleton } from 'primevue';
+import EventCard from '@/components/pages/event/EventCard.vue'
 
 const events = ref<EventType[]>([])
 const loading = ref<boolean>(false)
@@ -28,28 +29,9 @@ onMounted(async () => {
     <div v-else>
       <div
         v-if="events.length > 0"
-        class="flex flex-col justify-center gap-4"
+        class="grid grid-cols-1 md:grid-cols-2 justify-center gap-4"
       >
-        <Card
-          v-for="event in events"
-          :key="event.id"
-        >
-          <template #title>{{ event.title }}</template>
-          <template #content>
-            <p class="m-0">
-              {{ event.description }}
-            </p>
-            <span>
-              {{
-                new Intl.DateTimeFormat("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "2-digit",
-                }).format(new Date(event.date))
-              }}
-            </span>
-          </template>
-        </Card>
+        <EventCard v-for="event in events" :key="event.id" :event="event" />
       </div>
 
       <div v-else class="text-gray-500 dark:text-gray-400">No events found.</div>

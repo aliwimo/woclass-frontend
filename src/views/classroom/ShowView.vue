@@ -13,7 +13,6 @@ const year = today.getFullYear()
 const nextMonth = month === 11 ? 0 : month + 1
 const nextYear = nextMonth === 0 ? year + 1 : year
 
-// refs
 const date = ref()
 const minDate = ref(new Date())
 const maxDate = ref(new Date())
@@ -28,10 +27,7 @@ const updateClassroomId = () => {
   classroomId.value = parseInt(route.params.classroom_id as string)
 }
 
-// mounting
 onMounted(updateClassroomId)
-
-// watchers
 watch(() => route.params.classroom_id, updateClassroomId)
 
 </script>

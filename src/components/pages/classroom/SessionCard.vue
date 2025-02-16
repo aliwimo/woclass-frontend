@@ -3,8 +3,7 @@ import { defineProps } from 'vue'
 import { Card } from 'primevue'
 import type { SessionStatus } from '@/types/models/session'
 import TimeRangeDisplay from '@/components/pages/classroom/TimeRangeDisplay.vue'
-import CreateEventModal from '@/components/pages/classroom/CreateEventModal.vue'
-
+import CreateEventModal from '@/components/pages/event/CreateEventModal.vue'
 
 defineProps<{
   classroomId: number
@@ -32,7 +31,6 @@ defineProps<{
             :classroom-id="classroomId"
           />
         </div>
-
       </template>
     </Card>
   </div>
