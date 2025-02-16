@@ -7,12 +7,11 @@ import CreateEventModal from '@/components/pages/event/CreateEventModal.vue';
 
 defineProps<{
   classroomId: number
-  date: Date,
-  startTime: string,
-  endTime: string,
-  status: SessionStatus,
+  date: Date
+  startTime: string
+  endTime: string
+  status: SessionStatus
 }>();
-
 </script>
 
 <template>

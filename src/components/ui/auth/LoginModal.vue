@@ -27,7 +27,6 @@ const submitForm = async (form: FormSubmitEvent) => {
 };
 </script>
 
-
 <template>
   <Dialog visible modal dismissableMask header="Login">
     <Form
@@ -37,17 +36,30 @@ const submitForm = async (form: FormSubmitEvent) => {
       :validate-on-value-update="false"
       class="flex flex-col gap-4 w-full"
     >
-      <FormField v-slot="$field" name="email" initialValue="admin@example.com" class="flex flex-col gap-1">
+      <FormField
+        v-slot="$field"
+        name="email"
+        initialValue="admin@example.com"
+        class="flex flex-col gap-1"
+      >
         <InputText type="text" placeholder="Email" />
-        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{ $field.error?.message }}</Message>
+        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{
+          $field.error?.message
+        }}</Message>
       </FormField>
 
-      <FormField v-slot="$field" name="password" initialValue="password" class="flex flex-col gap-1">
+      <FormField
+        v-slot="$field"
+        name="password"
+        initialValue="password"
+        class="flex flex-col gap-1"
+      >
         <Password type="text" placeholder="Password" :feedback="false" toggleMask fluid />
-        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{ $field.error?.message }}</Message>
+        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{
+          $field.error?.message
+        }}</Message>
       </FormField>
       <Button type="submit" severity="primary" label="Login" />
     </Form>
   </Dialog>
 </template>
-

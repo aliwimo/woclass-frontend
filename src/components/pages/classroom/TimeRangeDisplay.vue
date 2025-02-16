@@ -2,8 +2,8 @@
 import { defineProps } from 'vue';
 
 defineProps<{
-  startTime: string,
-  endTime: string,
+  startTime: string
+  endTime: string
 }>();
 </script>
 

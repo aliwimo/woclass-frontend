@@ -10,5 +10,5 @@ import { Toast } from 'primevue';
   </header>
   <Toast position="bottom-center" />
   <ModalWrapper />
-  <RouterView class="max-w-4xl mx-auto p-10"/>
+  <RouterView class="max-w-4xl mx-auto p-10" />
 </template>

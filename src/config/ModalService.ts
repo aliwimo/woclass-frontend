@@ -8,4 +8,4 @@ export const ModalMap = {
   register: RegisterModal,
 };
 
-export type ModalKey = keyof typeof ModalMap;
+export type ModalKey = keyof typeof ModalMap

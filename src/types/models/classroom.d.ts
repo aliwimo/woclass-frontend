@@ -1,6 +1,6 @@
 export type ClassroomType = {
-  id: number;
-  name: string;
-  capacity: number;
-  description: string;
+  id: number
+  name: string
+  capacity: number
+  description: string
 }

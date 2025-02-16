@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import ClassroomCard from '@/components/pages/classroom/ClassroomCard.vue';
 import { onMounted, ref } from 'vue';
 import type { ClassroomType } from '@/types/models/classroom';

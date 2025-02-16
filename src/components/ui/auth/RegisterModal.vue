@@ -26,9 +26,7 @@ const submitForm = async (form: FormSubmitEvent) => {
     }
   }
 };
-
 </script>
-
 
 <template>
   <Dialog visible modal dismissableMask header="Register">
@@ -39,29 +37,61 @@ const submitForm = async (form: FormSubmitEvent) => {
       :validate-on-value-update="false"
       class="flex flex-col gap-4 w-full"
     >
-
-      <FormField v-slot="$field" name="name" initialValue="Mohamed Aliwi" class="flex flex-col gap-1">
+      <FormField
+        v-slot="$field"
+        name="name"
+        initialValue="Mohamed Aliwi"
+        class="flex flex-col gap-1"
+      >
         <InputText type="text" placeholder="Name" />
-        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{ $field.error?.message }}</Message>
+        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{
+          $field.error?.message
+        }}</Message>
       </FormField>
 
-      <FormField v-slot="$field" name="email" initialValue="test@example.com" class="flex flex-col gap-1">
+      <FormField
+        v-slot="$field"
+        name="email"
+        initialValue="test@example.com"
+        class="flex flex-col gap-1"
+      >
         <InputText type="text" placeholder="Email" />
-        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{ $field.error?.message }}</Message>
+        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{
+          $field.error?.message
+        }}</Message>
       </FormField>
 
-      <FormField v-slot="$field" name="password" initialValue="password" class="flex flex-col gap-1">
+      <FormField
+        v-slot="$field"
+        name="password"
+        initialValue="password"
+        class="flex flex-col gap-1"
+      >
         <Password type="text" placeholder="Password" :feedback="false" toggleMask fluid />
-        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{ $field.error?.message }}</Message>
+        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{
+          $field.error?.message
+        }}</Message>
       </FormField>
 
-      <FormField v-slot="$field" name="password_confirmation" initialValue="password" class="flex flex-col gap-1">
-        <Password type="text" placeholder="Password Confirmation" :feedback="false" toggleMask fluid />
-        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{ $field.error?.message }}</Message>
+      <FormField
+        v-slot="$field"
+        name="password_confirmation"
+        initialValue="password"
+        class="flex flex-col gap-1"
+      >
+        <Password
+          type="text"
+          placeholder="Password Confirmation"
+          :feedback="false"
+          toggleMask
+          fluid
+        />
+        <Message v-if="$field?.invalid" severity="error" size="small" variant="simple">{{
+          $field.error?.message
+        }}</Message>
       </FormField>
 
       <Button type="submit" severity="primary" label="Register" />
     </Form>
   </Dialog>
 </template>
-

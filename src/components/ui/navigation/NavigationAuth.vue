@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import { useModalStore } from '@/stores/modal.ts';
 import { useAuthStore } from '@/stores/authStore.ts';
 import type { ModalKey } from '@/config/ModalService.ts';
@@ -12,7 +11,6 @@ const authStore = useAuthStore();
 const openModal = (key: ModalKey) => {
   modalStore.openModal(key);
 };
-
 </script>
 <template>
   <div>
@@ -28,12 +26,7 @@ const openModal = (key: ModalKey) => {
         severity="secondary"
         @click="openModal('register')"
       />
-      <Button
-        label="Login"
-        size="small"
-        icon="pi pi-user"
-        @click="openModal('login')"
-      />
+      <Button label="Login" size="small" icon="pi pi-user" @click="openModal('login')" />
     </div>
   </div>
 </template>

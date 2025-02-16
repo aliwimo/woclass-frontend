@@ -22,7 +22,14 @@ defineProps<{ classroom: ClassroomType }>();
         </div>
 
         <div class="flex justify-end gap-4 mt-1">
-          <Button as="router-link" :to="`classrooms/${classroom.id}`" label="Show" size="small" icon="pi pi-angle-right" iconPos="right" />
+          <Button
+            as="router-link"
+            :to="`classrooms/${classroom.id}`"
+            label="Show"
+            size="small"
+            icon="pi pi-angle-right"
+            iconPos="right"
+          />
         </div>
       </div>
     </template>

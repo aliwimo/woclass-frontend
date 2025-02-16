@@ -8,7 +8,6 @@ import router from './router';
 import { Noir } from '@/theme.ts';
 import { useAuthStore } from '@/stores/authStore.ts';
 
-
 const app = createApp(App);
 
 app.use(createPinia());
@@ -24,10 +23,9 @@ app.use(PrimeVue, {
     preset: Noir,
     options: {
       darkModeSelector: 'class',
-    }
-  }
+    },
+  },
 });
 app.use(ToastService);
-
 
 app.mount('#app');

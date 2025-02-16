@@ -42,7 +42,12 @@ const reserve = async () => {
     toast.add({ severity: 'secondary', summary: 'Success!', life: 3000 });
     void router.push({ name: 'events' });
   } catch (error) {
-    toast.add({ severity: 'error', summary: 'Failed!', detail: 'Please Check Event\'s Title', life: 3000 });
+    toast.add({
+      severity: 'error',
+      summary: 'Failed!',
+      detail: "Please Check Event's Title",
+      life: 3000,
+    });
     console.error('Error reserving event:', error);
   }
 };
@@ -89,7 +94,13 @@ const reserve = async () => {
       />
     </div>
     <div class="flex justify-end gap-2">
-      <Button type="button" label="Cancel" severity="secondary" @click="visible = false" size="small" />
+      <Button
+        type="button"
+        label="Cancel"
+        severity="secondary"
+        @click="visible = false"
+        size="small"
+      />
       <Button type="button" label="Reserve" @click="reserve" size="small" />
     </div>
   </Dialog>

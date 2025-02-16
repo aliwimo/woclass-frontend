@@ -8,9 +8,6 @@ import EventField from '@/components/ui/EventField.vue';
 defineProps<{ event: EventType }>();
 
 // Utility function to format date and time
-
-
-
 </script>
 
 <template>

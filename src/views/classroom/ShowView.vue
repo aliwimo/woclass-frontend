@@ -29,7 +29,6 @@ const updateClassroomId = () => {
 
 onMounted(updateClassroomId);
 watch(() => route.params.classroom_id, updateClassroomId);
-
 </script>
 
 <template>

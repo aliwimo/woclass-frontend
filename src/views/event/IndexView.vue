@@ -9,4 +9,3 @@ import ViewTitle from '@/components/ui/ViewTitle.vue';
     <ListEvents />
   </div>
 </template>
-

@@ -9,4 +9,3 @@ import ClassroomList from '@/components/pages/classroom/ClassroomList.vue';
     <ClassroomList />
   </div>
 </template>
-

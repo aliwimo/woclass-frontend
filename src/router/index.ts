@@ -25,8 +25,7 @@ const router = createRouter({
       name: 'classroom',
       meta: { requiresAuth: true },
       component: () => import('@/views/classroom/ShowView.vue'),
-    }
-
+    },
   ],
 });
 

@@ -9,11 +9,11 @@ import NoSessions from '@/components/pages/classroom/NoSessions.vue';
 const props = defineProps({
   classroomId: {
     type: Number,
-    required: true
+    required: true,
   },
   date: {
     type: Date,
-    required: true
+    required: true,
   },
 });
 
@@ -34,12 +34,11 @@ const fetchSessions = async () => {
 
 onMounted(fetchSessions);
 watch(() => props.date, fetchSessions);
-
 </script>
 
 <template>
   <div v-if="sessions.length > 0">
-  <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-3 gap-4">
       <SessionCard
         v-for="(session, index) in sessions"
         :key="index"

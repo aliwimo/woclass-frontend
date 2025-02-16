@@ -8,7 +8,7 @@ export const eventService = {
   async getAllEvents(): Promise<EventType[]> {
     const response = await axios.request<any, AxiosResponse<EventType[]>>({
       method: endpoints.events.list.method,
-      url: endpoints.events.list.url()
+      url: endpoints.events.list.url(),
     });
     return response.data;
   },
@@ -19,5 +19,5 @@ export const eventService = {
       url: endpoints.events.create.url(),
       data: data,
     });
-  }
+  },
 };

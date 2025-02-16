@@ -17,24 +17,23 @@ const openModal = (key: ModalKey) => modalStore.openModal(key);
           <span class="text-sm text-gray-500">Please login or register to get started.</span>
         </div>
 
-      <div class="flex gap-2">
-        <Button
-          label="Register"
-          severity="secondary"
-          icon="pi pi-user-plus"
-          size="small"
-          @click="openModal('register')"
-        />
-        <Button
-          label="Login"
-          severity="primary"
-          icon="pi pi-user"
-          size="small"
-          @click="openModal('login')"
-        />
+        <div class="flex gap-2">
+          <Button
+            label="Register"
+            severity="secondary"
+            icon="pi pi-user-plus"
+            size="small"
+            @click="openModal('register')"
+          />
+          <Button
+            label="Login"
+            severity="primary"
+            icon="pi pi-user"
+            size="small"
+            @click="openModal('login')"
+          />
+        </div>
       </div>
-
-      </div>
-      </template>
+    </template>
   </Card>
 </template>

@@ -8,7 +8,7 @@ export const classroomService = {
   async getClassrooms(): Promise<ClassroomType[]> {
     const response = await axios.request<any, AxiosResponse<ClassroomType[]>>({
       method: endpoints.classrooms.list.method,
-      url: endpoints.classrooms.list.url()
+      url: endpoints.classrooms.list.url(),
     });
     return response.data;
   },
@@ -17,8 +17,8 @@ export const classroomService = {
     const response = await axios.request<any, AxiosResponse<SessionType[]>>({
       method: endpoints.classrooms.sessions.method,
       url: endpoints.classrooms.sessions.url(classroomId),
-      params: { date }
+      params: { date },
     });
     return response.data;
-  }
+  },
 };

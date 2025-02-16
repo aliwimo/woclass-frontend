@@ -6,10 +6,10 @@ const AuthEndpoints = {
   register: {
     method: 'POST',
     url: () => 'v1/register',
-  }
+  },
 } as const;
 
-type AuthEndpoints = typeof AuthEndpoints;
+type AuthEndpoints = typeof AuthEndpoints
 
 export type { AuthEndpoints };
 export default AuthEndpoints;

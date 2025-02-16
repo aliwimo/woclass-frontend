@@ -8,7 +8,7 @@ export const authService = {
     const response = await axios.request<any, AxiosResponse<authResponse>>({
       method: endpoints.auth.register.method,
       url: endpoints.auth.register.url(),
-      data: data
+      data: data,
     });
     return response.data;
   },
@@ -17,7 +17,7 @@ export const authService = {
     const response = await axios.request<any, AxiosResponse<authResponse>>({
       method: endpoints.auth.login.method,
       url: endpoints.auth.login.url(),
-      data: data
+      data: data,
     });
     return response.data;
   },
