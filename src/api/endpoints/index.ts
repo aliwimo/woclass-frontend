@@ -1,9 +1,11 @@
-import EventsEndpoints from '@/api/endpoints/event.endpoints.ts'
-import ClassroomsEndpoints from '@/api/endpoints/classroom.endpoints.ts'
+import EventsEndpoints from '@/api/endpoints/EventEndpoints.ts';
+import ClassroomsEndpoints from '@/api/endpoints/ClassroomEndpoints.ts';
+import AuthEndpoints from '@/api/endpoints/AuthEndpoints.ts';
 
 const EndpointManager = {
-  events: EventsEndpoints,
+  auth: AuthEndpoints,
   classrooms: ClassroomsEndpoints,
+  events: EventsEndpoints,
 };
 
 export default EndpointManager;

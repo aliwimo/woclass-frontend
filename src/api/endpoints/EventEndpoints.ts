@@ -6,10 +6,10 @@ const EventsEndpoints = {
   create: {
     method: 'POST',
     url: () => 'v1/events',
-  }
+  },
 } as const;
 
-type EventsEndpoints = typeof EventsEndpoints;
+type EventsEndpoints = typeof EventsEndpoints
 
 export type { EventsEndpoints };
 export default EventsEndpoints;

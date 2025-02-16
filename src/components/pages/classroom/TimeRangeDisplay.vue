@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps } from 'vue';
 
 defineProps<{
-  startTime: string,
-  endTime: string,
-}>()
+  startTime: string
+  endTime: string
+}>();
 </script>
 
 <template>

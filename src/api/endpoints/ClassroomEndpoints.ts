@@ -9,7 +9,7 @@ const ClassroomsEndpoints = {
   },
 } as const;
 
-type ClassroomsEndpoints = typeof ClassroomsEndpoints;
+type ClassroomsEndpoints = typeof ClassroomsEndpoints
 
 export type { ClassroomsEndpoints };
 export default ClassroomsEndpoints;

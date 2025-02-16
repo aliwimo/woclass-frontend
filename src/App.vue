@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import Navigation from '@/components/ui/layout/NavigationMenu.vue'
+import Navigation from '@/components/ui/navigation/NavigationMenu.vue';
+import ModalWrapper from '@/components/ui/ModalWrapper.vue';
+import { Toast } from 'primevue';
 </script>
 
 <template>
-  <header class="h-20 flex justify-center items-center px-10">
+  <header>
     <Navigation />
   </header>
-  <RouterView class="max-w-4xl mx-auto p-10"/>
+  <Toast position="bottom-center" />
+  <ModalWrapper />
+  <RouterView class="max-w-4xl mx-auto p-10" />
 </template>
-
-<style scoped>
-
-</style>

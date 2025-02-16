@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import { Card } from 'primevue'
-import type { SessionStatus } from '@/types/models/session'
-import TimeRangeDisplay from '@/components/pages/classroom/TimeRangeDisplay.vue'
-import CreateEventModal from '@/components/pages/classroom/CreateEventModal.vue'
-
+import { defineProps } from 'vue';
+import { Card } from 'primevue';
+import type { SessionStatus } from '@/types/models/session';
+import TimeRangeDisplay from '@/components/pages/classroom/TimeRangeDisplay.vue';
+import CreateEventModal from '@/components/pages/event/CreateEventModal.vue';
 
 defineProps<{
   classroomId: number
-  date: Date,
-  startTime: string,
-  endTime: string,
-  status: SessionStatus,
-}>()
-
+  date: Date
+  startTime: string
+  endTime: string
+  status: SessionStatus
+}>();
 </script>
 
 <template>
@@ -32,7 +30,6 @@ defineProps<{
             :classroom-id="classroomId"
           />
         </div>
-
       </template>
     </Card>
   </div>

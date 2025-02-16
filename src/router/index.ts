@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
+import { useAuthStore } from '@/stores/authStore.ts';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -6,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/views/classroom/IndexView.vue'),
+      component: () => import('@/views/HomeView.vue'),
     },
     {
       path: '/events',
@@ -14,12 +15,27 @@ const router = createRouter({
       component: () => import('@/views/event/IndexView.vue'),
     },
     {
+      path: '/classrooms',
+      name: 'classroom',
+      meta: { requiresAuth: true },
+      component: () => import('@/views/classroom/IndexView.vue'),
+    },
+    {
       path: '/classrooms/:classroom_id',
       name: 'classroom',
+      meta: { requiresAuth: true },
       component: () => import('@/views/classroom/ShowView.vue'),
-    }
-
+    },
   ],
-})
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore();
+  if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+    next('/');
+  } else {
+    next();
+  }
+});
+
+export default router;
